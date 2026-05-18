@@ -1,0 +1,21 @@
+title: "Your Name"
+description: "Personal homepage and research blog"
+url: ""
+baseurl: ""
+
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  publications:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <p class="eyebrow">{{ page.eyebrow | default: "Personal Homepage" }}</p>
+  <h1>{{ page.hero_title | default: site.title }}</h1>
+  <p class="hero-subtitle">{{ page.hero_subtitle | default: site.description }}</p>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <h2>About</h2>
+  </div>
+  <div class="prose">
+    {{ content }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <h2>Publications</h2>
+    <p>Selected papers and research projects.</p>
+  </div>
+
+  <div class="publication-grid">
+    {% assign papers = site.publications | sort: "year" | reverse %}
+    {% for paper in papers %}
+      <article class="publication-card">
+        <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}</p>
+        <h3>{{ paper.title }}</h3>
+        <div class="paper-summary">
+          {{ paper.content | markdownify }}
+        </div>
+        <div class="paper-links">
+          {% if paper.arxiv %}
+            <a href="{{ paper.arxiv }}">arXiv</a>
+          {% endif %}
+          {% if paper.code %}
+            <a href="{{ paper.code }}">Code</a>
+          {% endif %}
+          {% if paper.project %}
+            <a href="{{ paper.project }}">Project</a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <h2>Latest Notes</h2>
+    <p>Research thoughts, reading notes, and technical essays.</p>
+  </div>
+
+  <div class="post-list">
+    {% for post in site.posts limit: 5 %}
+      <article class="post-item">
+        <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <p class="post-meta">
+          {{ post.date | date: "%B %-d, %Y" }}
+          {% if post.reading_time %} &middot; {{ post.reading_time }}{% endif %}
+        </p>
+        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+
+  <p class="more-link"><a href="{{ '/blog/' | relative_url }}">View all posts &rarr;</a></p>
+</section>
