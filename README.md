@@ -28,6 +28,7 @@ Create a new Markdown file in `_publications/`:
 title: "Paper Title"
 venue: "Conference or Journal"
 year: 2025
+role: "first_author"
 arxiv: "https://arxiv.org/abs/..."
 code: "https://github.com/..."
 project: "https://..."
@@ -35,6 +36,8 @@ project: "https://..."
 
 Short paper summary.
 ```
+
+Use `role: "first_author"` only for first-author papers. Other publications can omit `role`.
 
 ## Add Blog Posts
 

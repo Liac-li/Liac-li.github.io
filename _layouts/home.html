@@ -27,7 +27,7 @@ layout: default
     {% assign papers = site.publications | sort: "year" | reverse %}
     {% for paper in papers %}
       <article class="publication-card">
-        <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}</p>
+        <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}{% if paper.role == "first_author" %} &middot; First Author{% endif %}</p>
         <h3>{{ paper.title }}</h3>
         <div class="paper-summary">
           {{ paper.content | markdownify }}

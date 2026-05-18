@@ -1,18 +1,15 @@
 ---
 layout: home
 title: Home
-eyebrow: Research · Engineering · Notes
-hero_title: Your Name
-hero_subtitle: I study machine learning systems, agents, and reliable AI. This site collects my research, projects, and working notes.
+eyebrow: Research · Engineering · 
+hero_title: Li Yantao's Homepage
+hero_subtitle: I study MLLM, agents, and diffusion Language Models. This site collects my research, projects, and working notes.
 ---
 
-你好，我是 **Your Name**。这里是我的个人主页，用来放研究方向、论文发表、代码项目和一些研究随想。
+Hi, I'm **Li Yantao**. This is my homepage for sharing research directions, publications, projects, and occasional notes.
 
-我的兴趣包括但不限于：
+I am a Ph.D. candidate in the NLP Group at Nanjing University ([NJU NLP](https://nlp.nju.edu.cn)), enrolled in the direct doctorate program starting in **2023**. I am currently interning at **China Unicom**. My advisor is Assoc. Prof. **[Jian-Bing Zhang](https://cs.nju.edu.cn/zhangjb/)**.
 
-- Large language models and autonomous agents
-- Reliable machine learning systems
-- Human-centered AI tools
-- Research engineering and reproducible experiments
+**Research interests.** Reinforcement learning for LLMs (**RL for LLMs**), especially multimodal model reasoning and reward modeling, plus related exploration of diffusion language models (**Diffusion LLMs**).
 
-你可以把这一段直接改成自己的个人简介：教育背景、当前单位、研究兴趣、联系方式，以及希望别人如何联系你。
+**Contact.** Reach me anytime at **[li_yantao@smail.nju.edu.cn](mailto:li_yantao@smail.nju.edu.cn)** — I'm always happy to connect.
