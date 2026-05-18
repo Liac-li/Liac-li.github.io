@@ -2,7 +2,7 @@
 title: "Vision-Language Models Can Self-Improve Reasoning via Reflection"
 venue: "NAACL"
 year: 2025
-role: first_author(equal)
+role: first_author
 arxiv: "https://arxiv.org/abs/2411.00855"
 code: "https://github.com/Liac-li/MM-self-improve-qwen2vl"
 project: ""

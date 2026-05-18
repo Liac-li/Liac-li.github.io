@@ -30,7 +30,7 @@ layout: default
         <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}{% if paper.role == "first_author" %} &middot; First Author{% endif %}</p>
         <h3>{{ paper.title }}</h3>
         <div class="paper-summary">
-          {{ paper.content | markdownify }}
+          <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
         </div>
         <div class="paper-links">
           {% if paper.arxiv %}
