@@ -3,7 +3,7 @@ layout: home
 title: Home
 eyebrow: Research · Engineering · 
 hero_title: Li Yantao's Homepage
-hero_subtitle: I study MLLM, agents, and diffusion Language Models. This site collects my research, projects, and working notes.
+hero_subtitle: I study MLLM, agents, and diffusion Language Models. This site collects my research, projects, and working notes. Have a good day
 ---
 
 Hi, I'm **Li Yantao**. This is my homepage for sharing research directions, publications, projects, and occasional notes.
