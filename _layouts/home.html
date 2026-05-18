@@ -26,24 +26,52 @@ layout: default
   <div class="publication-grid">
     {% assign papers = site.publications | sort: "year" | reverse %}
     {% for paper in papers %}
-      <article class="publication-card">
-        <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}{% if paper.role == "first_author" %} &middot; First Author{% endif %}</p>
-        <h3>{{ paper.title }}</h3>
-        <div class="paper-summary">
-          <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
-        </div>
-        <div class="paper-links">
-          {% if paper.arxiv %}
-            <a href="{{ paper.arxiv }}">arXiv</a>
-          {% endif %}
-          {% if paper.code %}
-            <a href="{{ paper.code }}">Code</a>
-          {% endif %}
-          {% if paper.project %}
-            <a href="{{ paper.project }}">Project</a>
-          {% endif %}
-        </div>
-      </article>
+      {% if paper.role == "first_author" %}
+        <article class="publication-card">
+          <div>
+            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %} &middot; First Author</p>
+            <h3>{{ paper.title }}</h3>
+            <div class="paper-summary">
+              <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
+            </div>
+          </div>
+          <div class="paper-links">
+            {% if paper.arxiv %}
+              <a href="{{ paper.arxiv }}">arXiv</a>
+            {% endif %}
+            {% if paper.code %}
+              <a href="{{ paper.code }}">Code</a>
+            {% endif %}
+            {% if paper.project %}
+              <a href="{{ paper.project }}">Project</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+    {% for paper in papers %}
+      {% unless paper.role == "first_author" %}
+        <article class="publication-card">
+          <div>
+            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}</p>
+            <h3>{{ paper.title }}</h3>
+            <div class="paper-summary">
+              <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
+            </div>
+          </div>
+          <div class="paper-links">
+            {% if paper.arxiv %}
+              <a href="{{ paper.arxiv }}">arXiv</a>
+            {% endif %}
+            {% if paper.code %}
+              <a href="{{ paper.code }}">Code</a>
+            {% endif %}
+            {% if paper.project %}
+              <a href="{{ paper.project }}">Project</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endunless %}
     {% endfor %}
   </div>
 </section>
