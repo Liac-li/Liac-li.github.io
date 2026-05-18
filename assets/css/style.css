@@ -158,10 +158,9 @@ a:hover {
 }
 
 .publication-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--surface);
@@ -169,11 +168,28 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+.paper-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+}
+
 .paper-meta,
 .post-meta {
-  margin: 0 0 10px;
+  margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.paper-meta {
+  padding-top: 0.18rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.post-meta {
+  margin: 0 0 10px;
 }
 
 .publication-card h3 {
@@ -183,9 +199,10 @@ a:hover {
 }
 
 .paper-summary {
-  margin-top: 12px;
+  max-width: 920px;
   color: var(--muted);
   font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .paper-summary p {
@@ -197,6 +214,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-end;
+  margin-left: auto;
 }
 
 .paper-links a {
@@ -209,8 +227,14 @@ a:hover {
 }
 
 @media (max-width: 720px) {
-  .publication-card {
+  .paper-heading {
     grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .paper-meta {
+    text-align: left;
+    white-space: normal;
   }
 
   .paper-links {

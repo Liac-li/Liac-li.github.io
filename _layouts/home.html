@@ -28,12 +28,12 @@ layout: default
     {% for paper in papers %}
       {% if paper.role == "first_author" %}
         <article class="publication-card">
-          <div>
-            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %} &middot; First Author</p>
+          <div class="paper-heading">
             <h3>{{ paper.title }}</h3>
-            <div class="paper-summary">
-              <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
-            </div>
+            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %} &middot; First Author</p>
+          </div>
+          <div class="paper-summary">
+            <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
           </div>
           <div class="paper-links">
             {% if paper.arxiv %}
@@ -52,12 +52,12 @@ layout: default
     {% for paper in papers %}
       {% unless paper.role == "first_author" %}
         <article class="publication-card">
-          <div>
-            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}</p>
+          <div class="paper-heading">
             <h3>{{ paper.title }}</h3>
-            <div class="paper-summary">
-              <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
-            </div>
+            <p class="paper-meta">{{ paper.venue }}{% if paper.year %} &middot; {{ paper.year }}{% endif %}</p>
+          </div>
+          <div class="paper-summary">
+            <p>{{ paper.content | markdownify | strip_html | truncatewords: 50 }}</p>
           </div>
           <div class="paper-links">
             {% if paper.arxiv %}
