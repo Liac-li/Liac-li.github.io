@@ -1,5 +1,24 @@
+# Jekyll build output and caches
 _site/
-.sass-cache/
+dist/
 .jekyll-cache/
 .jekyll-metadata
+.sass-cache/
+
+# Ruby and Bundler local state
+.bundle/
 vendor/
+*.gem
+.yardoc/
+
+# Local development tooling
+.ruby-lsp/
+.solargraph/
+
+# Node tooling caches, if used for assets
+node_modules/
+.parcel-cache/
+.vite/
+
+# OS files
+.DS_Store
